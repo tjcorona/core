@@ -94,12 +94,12 @@ static bool withinCyl(apf::Vector3 points, double* cyl) {
   if((fabs((points[0]- cyl[0])*cyl[3]+
            (points[1]- cyl[1])*cyl[4]+
 		   (points[2]- cyl[2])*cyl[5]) <= cyl[6]) &&
-  sqrt(((points[0]- cyl[0])*cyl[4] - (points[1]- cyl[1])*cyl[3])*
+  (sqrt(((points[0]- cyl[0])*cyl[4] - (points[1]- cyl[1])*cyl[3])*
        ((points[0]- cyl[0])*cyl[4] - (points[1]- cyl[1])*cyl[3])+
 	   ((points[0]- cyl[0])*cyl[5] - (points[2]- cyl[2])*cyl[3])*
 	   ((points[0]- cyl[0])*cyl[5] - (points[2]- cyl[2])*cyl[3])+
 	   ((points[1]- cyl[1])*cyl[5] - (points[2]- cyl[2])*cyl[4])*
-	   ((points[1]- cyl[1])*cyl[5] - (points[2]- cyl[2])*cyl[4]) <= cyl[7]))
+	   ((points[1]- cyl[1])*cyl[5] - (points[2]- cyl[2])*cyl[4])) <= cyl[7]))
     return true;
   else
     return false;
